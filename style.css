@@ -1,0 +1,303 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1f24;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    }
+    
+    .box {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 500px;
+    height: 90%;
+    max-height: 700px;
+    }
+    
+    /* Waves */
+    .wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    animation: wave 10s infinite linear;
+    }
+    
+    .wave.-one {
+    background-image: url("https://res.cloudinary.com/dnboldv5r/image/upload/v1654522818/wave-top_r2dqnk.svg");
+    z-index: 2;
+    opacity: 0.5;
+    }
+    
+    .wave.-two {
+    background-image: url("https://res.cloudinary.com/dnboldv5r/image/upload/v1654522818/wave-mid_txf6jd.svg");
+    z-index: 1;
+    opacity: 0.75;
+    animation-delay: -5s;
+    }
+    
+    .wave.-three {
+    background-image: url("https://res.cloudinary.com/dnboldv5r/image/upload/v1654522818/wave-bot_wbodlu.svg");
+    z-index: 0;
+    }
+    
+    @keyframes wave {
+    0% {
+    background-position-x: 0;
+    }
+    100% {
+    background-position-x: 200%;
+    }
+    }
+    
+    /* Weather icon */
+    #weathercon {
+    font-size: 8rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    #weathercon i {
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+    }
+    
+    #weathercon i:hover {
+    transform: scale(0.9);
+    }
+    
+    #weathercon .sun {
+    color: #f48037;
+    font-size: 10rem;
+    position: relative;
+    }
+    
+    #weathercon .sun:before,
+    #weathercon .sun:after {
+    content: "";
+    position: absolute;
+    background-color: inherit;
+    border-radius: 50%;
+    box-shadow: inherit;
+    }
+    
+    #weathercon .sun:before {
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    }
+    
+    #weathercon .sun:after {
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 40%;
+    }
+    
+    #weathercon .cloud {
+    color: #ddd;
+    position: relative;
+    }
+    
+    #weathercon .cloud:before,
+    #weathercon .cloud:after {
+      content: "";
+      position: absolute;
+      background-color: inherit;
+      border-radius: 50%;
+      box-shadow: inherit;
+      transform: translate(-50%, -50%);
+    }
+    
+    #weathercon .cloud:before {
+      width: 60%;
+      height: 60%;
+      top: 35%;
+      left: 25%;
+      box-shadow: -40px -20px #ddd, -20px -20px #ddd, 0 -20px #ddd, 20px -20px #ddd, 40px -20px #ddd, -30px 0 #ddd, 30px 0 #ddd, -50px 10px #ddd, -20px 10px #ddd, 0 10px #ddd, 20px 10px #ddd, 50px 10px #ddd, -30px 20px #ddd, 30px 20px #ddd, -20px 30px #ddd, 0 30px #ddd, 20px 30px #ddd;
+    }
+    
+    #weathercon .cloud:after {
+      width: 50%;
+      height: 50%;
+      top: 25%;
+      left: 60%;
+      box-shadow: -30px -15px #ddd, -15px -15px #ddd, 0 -15px #ddd, 15px -15px #ddd, 30px -15px #ddd, -22.5px 0 #ddd, 22.5px 0 #ddd, -37.5px 7.5px #ddd, -15px 7.5px #ddd, 0 7.5px #ddd, 15px 7.5px #ddd, 37.5px 7.5px #ddd, -22.5px 15px #ddd, 22.5px 15px #ddd, -15px 22.5px #ddd, 0 22.5px #ddd, 15px 22.5px #ddd;
+    }
+    
+
+
+
+
+
+    .info h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        }
+        
+        .info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: #ccc;
+        }
+        
+        .info p {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #eee;
+        }
+        
+        .info .temp {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        }
+        
+        /* Media queries */
+        @media screen and (max-width: 768px) {
+        .box {
+        padding: 20px;
+        }
+        
+        #weathercon {
+        font-size: 6rem;
+        }
+        
+        .info h2 {
+        font-size: 2rem;
+        }
+        
+        .info h3 {
+        font-size: 1.2rem;
+        }
+        
+        .info p {
+        font-size: 1rem;
+        }
+        
+        .info .temp {
+        font-size: 3rem;
+        }
+        }
+        
+        @media screen and (max-width: 576px) {
+        .box {
+        padding: 10px;
+        }
+        
+        #weathercon {
+        font-size: 4rem;
+        }
+        
+        .info h2 {
+        font-size: 1.5rem;
+        }
+        
+        .info h3 {
+        font-size: 1rem;
+        }
+        
+        .info p {
+        font-size: 0.9rem;
+        }
+        #date{
+            color: #ddd;
+        }
+        
+        .info .temp {
+        font-size: 2.5rem;
+        }
+        }
+        
+        /* Hover effect for sun */
+        #weathercon .sun:hover {
+        transform: scale(0.8);
+        }
+        
+        /* Dark mode styles */
+        body.dark {
+        background-color: #222;
+        }
+        
+        .box.dark {
+        background: rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.5);
+        }
+        
+        .info.dark h2,
+        .info.dark h3,
+        .info.dark p,
+        .info.dark .temp {
+        color: #ddd;
+        }
+        
+        .wave.-one.dark {
+        background-image: url("https://res.cloudinary.com/dnboldv5r/image/upload/v1654522818/wave-top-dark_t5r5ds.svg");
+        }
+        
+        .wave.-two.dark {
+        background-image: url("https://res.cloudinary.com/dnboldv5r/image/upload/v1654522818/wave-mid-dark_r9uzrq.svg");
+        }
+        
+        .wave.-three.dark {
+        background-image: url("https://res.cloudinary.com/dnboldv5r/image/upload/v1654522818/wave-bot-dark_bphziv.svg");
+        }
+        
+        #weathercon i.dark {
+        text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+        }
+        
+        #weathercon .sun.dark {
+        color: #ffa800;
+        }
+        
+        #weathercon .cloud.dark {
+        color: #333;
+        }
+        
+        #weathercon .cloud:before.dark,
+        #weathercon .cloud:after.dark {
+        background-color: inherit;
+        box-shadow: inherit;
+        }
+        
+        /* Animation for cloud */
+        #weathercon .cloud.dark:before,
+        #weathercon .cloud.dark:after {
+        animation: move-cloud 15s infinite linear;
+        }
+        
+        @keyframes move-cloud {
+        0% {
+        transform: translate(-50%, -50%);
+        }
+        50% {
+        transform: translate(-25%, -50%);
+        }
+        100% {
+        transform: translate(-50%, -50%);
+        }
+        }
